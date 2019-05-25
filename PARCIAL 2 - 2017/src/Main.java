@@ -7,8 +7,7 @@ public class Main {
      */
     public static void main(String[] args) {
         TArbolBBU ucu  = new TArbolBBU();
-       // cargar los alumnos en el árbol "ucu" desde el archivo de datos "datos.csv"
-             
+       // cargar los alumnos en el árbol "ucu" desde el archivo de datos "datos.csv"           
         
         
                 
