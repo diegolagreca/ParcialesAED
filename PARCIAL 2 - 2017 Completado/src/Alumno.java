@@ -33,7 +33,7 @@ public class Alumno {
     }
 
     public String imprimir() {
-        return (this.Codigo + " " + this.Apellido + " " + this.Carrera);
+        return ("Código: " + this.Codigo + ", Apellido: " + this.Apellido + ", Carrera: " + this.Carrera);
 
     }
 

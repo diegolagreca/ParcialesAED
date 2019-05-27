@@ -3,23 +3,21 @@ import java.util.LinkedList;
 
 public class TArbolBBU implements IArbolBBU {
 
-    private  TNodoAlumnoAB raiz;
+    private TNodoAlumnoAB raiz;
 
     /**
      * Separador utilizado entre elemento y elemento al imprimir la lista
      */
-    public static final String SEPARADOR_ELEMENTOS_IMPRESOS = "-";
+    public static final String SEPARADOR_ELEMENTOS_IMPRESOS = "\n";
 
     public TArbolBBU() {
         raiz = null;
     }
 
-   
     /**
      * @param unaEtiqueta
      * @return
      */
-   
     @Override
     public TNodoAlumnoAB buscar(Comparable unaEtiqueta) {
         if (esVacio()) {
@@ -66,7 +64,7 @@ public class TArbolBBU implements IArbolBBU {
 
     @Override
     public boolean insertar(TNodoAlumnoAB unElemento) {
-        
+
         if (esVacio()) {
             raiz = unElemento;
             return true;
@@ -77,29 +75,30 @@ public class TArbolBBU implements IArbolBBU {
 
     @Override
     public TArbolBBU armarIndiceCarrera(Comparable laCarrera) {
-        
+
         TArbolBBU arbolIN = new TArbolBBU();
-        
-        if (!this.esVacio())
-        {
-          raiz.indizar(arbolIN, laCarrera);
-          return arbolIN;
+
+        if (!this.esVacio()) {
+            raiz.indizar(arbolIN, laCarrera);
+            return arbolIN;
         }
         return arbolIN;
     }
-    
-    public String mayorValor(int claveMenor,int claveMayor)
-    {
-        if (this.esVacio())
-        {
+
+    public String mayorValor(int claveMenor, int claveMayor) {
+        if (this.esVacio()) {
             return "0";
-        } 
-        else
-            {
-                return raiz.mayorValor(claveMenor, claveMayor);
-            }
+        } else {
+            return raiz.mayorValor(claveMenor, claveMayor);
+        }
     }
 
-    
+    public int mayorValorCodigo(int claveMenor, int claveMayor) {
+        if (this.esVacio()) {
+            return 0;
+        } else {
+            return raiz.mayorValorCodigo(claveMenor, claveMayor);
+        }
+    }
 
 }

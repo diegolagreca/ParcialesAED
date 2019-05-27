@@ -95,7 +95,7 @@ public class TNodoAlumnoAB implements INodoAlumnoAB {
      * @return
      */
     public String imprimir() {
-        return (etiqueta.toString());
+        return ("Etiqueta: " + this.etiqueta + " " + datos.imprimir());
     }
 
     public void setHijoIzq(TNodoAlumnoAB elemento) {
@@ -179,5 +179,25 @@ public class TNodoAlumnoAB implements INodoAlumnoAB {
 
         }
         return mayorApellido;
+    }
+
+    public int mayorValorCodigo(Comparable claveMenor, int claveMayor) {
+        int mayor = this.recorridoMayorCodigo(claveMenor, claveMayor, 0);
+        return mayor;
+    }
+
+    public int recorridoMayorCodigo(Comparable claveMenor, Comparable claveMayor, int mayorCodigo) {
+        int codigoActual = this.getDatos().getCodigo();
+        if (codigoActual > mayorCodigo) {
+            mayorCodigo = codigoActual;
+        }
+        if ((int) etiqueta >= (int) claveMenor && (int) etiqueta <= (int) claveMayor) {
+            if (hijoDer != null) {
+                return hijoDer.recorridoMayorCodigo(claveMenor, claveMayor, mayorCodigo);
+            } else if (hijoIzq != null) {
+                return hijoIzq.recorridoMayorCodigo(claveMenor, claveMayor, mayorCodigo);
+            }
+        }
+        return mayorCodigo;
     }
 }
