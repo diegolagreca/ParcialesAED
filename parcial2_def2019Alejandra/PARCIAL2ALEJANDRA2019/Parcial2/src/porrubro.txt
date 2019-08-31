@@ -1,0 +1,12 @@
+Codigo Pieza: 3397001359, Codigo Catálogo:  10.1.1   Twin  Valor en stock: 2328
+Codigo Pieza: 3397002918, Codigo Catálogo:  10.1.2   Twin HCV  Valor en stock: 436
+Codigo Pieza: 3397001765, Codigo Catálogo:  10.1.3   SuperPlus  Valor en stock: 68
+Codigo Pieza: 3397004558, Codigo Catálogo:  10.1.4   Conventional Rear  Valor en stock: 56
+Codigo Pieza: 3397007072, Codigo Catálogo:  10.2.1   Aerotwin  Valor en stock: 570
+Codigo Pieza: 3397007460, Codigo Catálogo:  10.2.2   Aerotwin Multiclip  Valor en stock: 750
+Codigo Pieza: 3397118903, Codigo Catálogo:  10.2.3   Aerotwin Retrofit  Valor en stock: 567
+Codigo Pieza: 3397005828, Codigo Catálogo:  10.2.4   Aerotwin Rear  Valor en stock: 280
+Codigo Pieza: 3397008841, Codigo Catálogo:  10.2.5   Aerotwin HCV  Valor en stock: 180
+Codigo Pieza: 3397006941, Codigo Catálogo:  10.2.6   Aerotwin Plus  Valor en stock: 175
+Codigo Pieza: 3397001696, Codigo Catálogo:  10.3.1   Eco Blades  Valor en stock: 64
+Codigo Pieza: 3137410004, Codigo Catálogo:  10.5.1   Systems and Sensors  Valor en stock: 264
