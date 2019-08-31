@@ -50,7 +50,6 @@ public class Lista<T> implements ILista<T> {
         Nodo<T> aux = primero;
         if (aux.getEtiqueta().compareTo(clave) == 0) {
             //Eliminamos el primer elemento
-            Nodo<T> temp1 = aux;
             Nodo<T> temp = aux.getSiguiente();
             primero = temp;
             return true;
@@ -126,7 +125,40 @@ public class Lista<T> implements ILista<T> {
         this.primero = unNodo;
     }
 
+    public INodo quitarPrimero() {
+        INodo aux;
+        INodo x = null;
+        aux = getPrimero();
+        if (!esVacia()) {
+            x = getPrimero();
+            eliminar((Comparable) aux);
+        }
+        return x;
+    }
 
+    public void quitarMayor() {
+        INodo aux = getPrimero();
+        INodo mayor = getPrimero();
+        while (aux != null) {
+            if (mayor.getEtiqueta().compareTo(aux.getEtiqueta()) < 1) {
+                mayor = aux;
+            }
+            aux = aux.getSiguiente();
+        }
+        eliminar(mayor.getEtiqueta());
+    }
+
+    public void quitarMenor() {
+        INodo aux = getPrimero();
+        INodo menor = getPrimero();
+        while (aux != null) {
+            if (menor.getEtiqueta().compareTo(aux.getEtiqueta()) > 1) {
+                menor = aux;
+            }
+            aux = aux.getSiguiente();
+        }
+        eliminar(menor.getEtiqueta());
+    }
 
     public void insertarOrdenado(Nodo<T> nodo) {
         Nodo<T> actual;

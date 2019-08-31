@@ -33,13 +33,12 @@ public class Facultad {
             listaOrdenada.insertarOrdenado(new Nodo<>(alumnoActual.getNombre(), alumnoActual));
         }
         // Imprimo la lista con saltos de línea
-        
+
         //System.out.print(listaOrdenada.imprimir("\n"));
-        
         return listaOrdenada;
     }
 
-        public Lista<Alumno> getListaOrdenadaPorCodigo(Lista<Alumno> listaAlumnos) {
+    public Lista<Alumno> getListaOrdenadaPorCodigo(Lista<Alumno> listaAlumnos) {
         Lista<Alumno> listaOrdenada;
         Nodo<Alumno> actual;
         Alumno alumnoActual;
@@ -62,9 +61,9 @@ public class Facultad {
             listaOrdenada.insertarOrdenado(new Nodo<>(alumnoActual.getCodigo(), alumnoActual));
         }
         // Imprimo la lista con saltos de línea
-        
+
         //System.out.print(listaOrdenada.imprimir("\n"));
-        
         return listaOrdenada;
     }
+
 }
