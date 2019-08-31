@@ -136,7 +136,7 @@ public class Lista<T> implements ILista<T> {
         return x;
     }
 
-    public void quitarMayor() {
+    public INodo<T> obtenerMayor() {
         INodo aux = getPrimero();
         INodo mayor = getPrimero();
         while (aux != null) {
@@ -145,10 +145,10 @@ public class Lista<T> implements ILista<T> {
             }
             aux = aux.getSiguiente();
         }
-        eliminar(mayor.getEtiqueta());
+        return mayor;
     }
 
-    public void quitarMenor() {
+    public INodo<T> obtenerMenor() {
         INodo aux = getPrimero();
         INodo menor = getPrimero();
         while (aux != null) {
@@ -157,7 +157,17 @@ public class Lista<T> implements ILista<T> {
             }
             aux = aux.getSiguiente();
         }
+        return menor;
+    }
+
+    public void quitarMenor() {
+        INodo menor = obtenerMenor();
         eliminar(menor.getEtiqueta());
+    }
+
+    public void quitarMayor() {
+        INodo mayor = obtenerMayor();
+        eliminar(mayor.getEtiqueta());
     }
 
     public void insertarOrdenado(Nodo<T> nodo) {
