@@ -6,25 +6,31 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Parcial {
-    
-    /** Constante posición del ID alumno */
+
+    /**
+     * Constante posición del ID alumno
+     */
     private static final int ID = 0;
-    
-    /** Constante posición del nombre del alumno */
+
+    /**
+     * Constante posición del nombre del alumno
+     */
     private static final int NOMBRE = 1;
 
-    /** Constante separador de los campos */
+    /**
+     * Constante separador de los campos
+     */
     private static final String SEPARADOR = ",";
-    
+
     public static void main(String[] args) throws IOException {
         BufferedReader lector;
         BufferedWriter escritor;
         String campos[];
         Nodo<Alumno> nodoActual;
-        
+
         // instanciar conjunto basico ingeniería...
         Conjunto<Alumno> basicoIng = new Conjunto<>();
-        
+
         // cargar alumnos del curso BasicoIng desde el archivo “basico-ing.txt”
         lector = new BufferedReader(new FileReader("src/basico-ing.txt"));
         for (String linea = ""; (linea = lector.readLine()) != null; /**/) {
@@ -32,8 +38,10 @@ public class Parcial {
             basicoIng.insertar(new Nodo<>(Integer.valueOf(campos[ID]), new Alumno(Integer.valueOf(campos[ID]), campos[NOMBRE])));
         }
         lector.close();
-        
+
         // Verifico que estén todos en el output
+        System.out.println("*** Alumnos Básico Ingeniería ***\n");
+
         basicoIng.imprimir();
 
         // instanciar conjunto básico empresarial...
@@ -45,8 +53,9 @@ public class Parcial {
             basiscoEmp.insertar(new Nodo<>(Integer.valueOf(campos[ID]), new Alumno(Integer.valueOf(campos[ID]), campos[NOMBRE])));
         }
         lector.close();
-        
+
         // Verifico que estén todos en el output
+        System.out.println("\n*** Alumnos Básico Empresarial ***\n");
         basiscoEmp.imprimir();
 
         // generar el curso "integrador101" con los alumnos que están en condiciones de cursarlo  
@@ -59,7 +68,7 @@ public class Parcial {
             nodoActual = nodoActual.getSiguiente();
         }
         escritor.close();
-        
+
         // generar el curso "exigente102" con los alumnos que están en condiciones de cursarlo 
         // guardar en un archivo "exigente102.txt" - IDEALMENTE ordenados por código de alumno -
         Conjunto<Alumno> exigente102 = basicoIng.interseccion(basiscoEmp);

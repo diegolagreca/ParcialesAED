@@ -73,8 +73,7 @@ public class Lista<T> implements ILista<T> {
         if (!esVacia()) {
             Nodo<T> temp = primero;
             while (temp != null) {
-                temp.imprimirEtiqueta();
-                temp.getDato().toString();
+                temp.imprimir();
                 temp = temp.getSiguiente();
             }
         }

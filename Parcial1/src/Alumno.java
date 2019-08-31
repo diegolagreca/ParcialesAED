@@ -10,11 +10,11 @@
  */
 public class Alumno {
     private final int codigo;
-    private final String Nombre;
+    private final String nombre;
 
     public Alumno(int codigo, String Nombre) {
         this.codigo = codigo;
-        this.Nombre = Nombre;
+        this.nombre = Nombre;
     }
 
     /**
@@ -28,9 +28,12 @@ public class Alumno {
      * @return the Nombre
      */
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
     
-    
+    @Override
+    public String toString(){
+        return "Alumno de código " + codigo + " y nombre " + nombre;
+    }
     
 }
