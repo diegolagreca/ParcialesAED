@@ -33,7 +33,7 @@ public class Parcial {
 
         // cargar alumnos del curso BasicoIng desde el archivo “basico-ing.txt”
         lector = new BufferedReader(new FileReader("src/basico-ing.txt"));
-        for (String linea = ""; (linea = lector.readLine()) != null; /**/) {
+        for (String linea = ""; (linea = lector.readLine()) != null; ) {
             campos = linea.split(SEPARADOR);
             basicoIng.insertar(new Nodo<>(Integer.valueOf(campos[ID]), new Alumno(Integer.valueOf(campos[ID]), campos[NOMBRE])));
         }
@@ -56,8 +56,11 @@ public class Parcial {
 
         // Verifico que estén todos en el output
         System.out.println("\n*** Alumnos Básico Empresarial ***\n");
-        basiscoEmp.imprimir();
+        Facultad facu = new Facultad();
+        facu.getListaOrdenadaPorNombre(basiscoEmp).imprimir();
 
+        // basiscoEmp.imprimir();
+        
         // generar el curso "integrador101" con los alumnos que están en condiciones de cursarlo  
         // guardar en un archivo "integrador101.txt"  - IDEALMENTE ordenados por código de alumno -
         Conjunto<Alumno> integrador101 = basicoIng.union(basiscoEmp);
