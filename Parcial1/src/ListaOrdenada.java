@@ -63,6 +63,7 @@ public class ListaOrdenada<T> extends Lista<T> implements IOrdenar<T> {
         }
     }
 
+    /*
     @Override
     public Lista<T> insercionDirecta() {
         ListaOrdenada<T> nuevaLista;
@@ -77,6 +78,21 @@ public class ListaOrdenada<T> extends Lista<T> implements IOrdenar<T> {
         }
 
         return nuevaLista;
+    }
+     */
+    public Lista insercionDirecta() {
+        Lista<T> Nueva = new Lista<T>();
+        INodo<T> aux;
+        aux = getPrimero();
+        if (aux == null) {
+            return Nueva;
+        }
+        while (aux != null) {
+            INodo<T> x = quitarPrimero();
+            Nueva.insertarOrdenado((Nodo<T>) x);
+            aux = aux.getSiguiente();
+        }
+        return Nueva;
     }
 
     @Override

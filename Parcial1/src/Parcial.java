@@ -92,9 +92,44 @@ public class Parcial {
 
         exigente102.quitarMayor();
         exigente102.quitarMenor2();
-
         exigente102.imprimir();
 
+        Lista<Alumno> listaTest1 = new Lista();
+
+        Nodo nodo1 = new Nodo<>(1, new Alumno(1, "Peteco"));
+        Nodo nodo2 = new Nodo<>(2, new Alumno(2, "Manolo"));
+        Nodo nodo3 = new Nodo<>(3, new Alumno(3, "Potasio"));
+
+        listaTest1.insertar(nodo3);
+        listaTest1.insertar(nodo1);
+        listaTest1.insertar(nodo2);
+
+        System.out.println("\n *** Lista sin ordenar 1 ***\n ");
+
+        listaTest1.imprimir();
+        System.out.println("\n *** Lista inserción directa ***\n ");
+
+        Lista<Alumno> listaInsercionDirecta = listaTest1.insercionDirecta();
+        listaInsercionDirecta.imprimir();
+
+        System.out.println("\n *** Lista sin ordenar 2 ***\n ");
+
+        Lista<Alumno> listaTest2 = new Lista();
+
+        Nodo nodo4 = new Nodo<>(4, new Alumno(4, "TA"));
+        Nodo nodo5 = new Nodo<>(5, new Alumno(5, "TE"));
+        Nodo nodo6 = new Nodo<>(6, new Alumno(6, "TI"));
+
+        listaTest2.insertar(nodo6);
+        listaTest2.insertar(nodo4);
+        listaTest2.insertar(nodo5);
+
+        listaTest2.imprimir();
+
+        System.out.println("\n *** Lista selección directa ***\n ");
+
+        Lista<Alumno> listaSeleccionDirecta = listaTest2.seleccionDirecta();
+        listaSeleccionDirecta.imprimir();
     }
 
 }
