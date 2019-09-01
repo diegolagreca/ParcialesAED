@@ -1,40 +1,36 @@
+
 public interface INodo<T> {
 
-    
     /**
      * devuelve el dato del nodo
-     * @return 
+     *
+     * @return
      */
     public T getDato();
-    
+
     /**
      * devuelve el siguiente del nodo
-     * @return 
+     *
+     * @return
      */
     public Nodo<T> getSiguiente();
-    
-    
+
     /**
      * "engancha" otro nodo a continuacion
-     * 
+     *
      */
     public void setSiguiente(Nodo<T> nodo);
-    
+
     /**
      * Imprime los datos del nodo
      */
-    
-    
-    
     public void imprimir();
 
     /**
      * Imprime la etiqueta del nodo
      */
-    
     public void imprimirEtiqueta();
 
-    
     /**
      * Retorna la etiqueta del nodo
      *
@@ -55,4 +51,6 @@ public interface INodo<T> {
      * si es mayor
      */
     public int compareTo(Comparable etiqueta);
+
+    public Nodo<T> clonar();
 }

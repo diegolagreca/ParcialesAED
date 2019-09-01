@@ -91,7 +91,7 @@ public class Parcial {
         System.out.println("\n*** Alumnos Exigente 102 ***\n");
 
         exigente102.quitarMayor();
-        exigente102.quitarMenor();
+        exigente102.quitarMenor2();
 
         exigente102.imprimir();
 

@@ -160,9 +160,41 @@ public class Lista<T> implements ILista<T> {
         return menor;
     }
 
-    public void quitarMenor() {
+    public void quitarMenor2() {
         INodo menor = obtenerMenor();
         eliminar(menor.getEtiqueta());
+    }
+
+    public Nodo<T> quitarMenor() {
+        Nodo<T> anterior, actual, menor, auxMenor;
+
+        if (this.esVacia()) {
+            return null;
+        }
+
+        actual = this.getPrimero();
+        menor = this.getPrimero();
+        anterior = null;
+        auxMenor = null;
+
+        while (actual != null) {
+            if (actual.compareTo(menor.getEtiqueta()) < 0) {
+                menor = actual;
+                auxMenor = anterior;
+            }
+            anterior = actual;
+            actual = actual.getSiguiente();
+        }
+
+        if (auxMenor == null) {
+            this.setPrimero(menor.getSiguiente());
+        } else {
+            auxMenor.setSiguiente(menor.getSiguiente());
+        }
+        menor.setSiguiente(null);
+
+        // Retorno nodo menor
+        return menor;
     }
 
     public void quitarMayor() {
