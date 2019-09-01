@@ -101,7 +101,7 @@ public class Lista<T> implements ILista<T> {
             System.out.println("Cantidad de elementos 0.");
             return 0;
         } else {
-            INodo aux = primero;
+            Nodo aux = primero;
             while (aux != null) {
                 contador++;
                 aux = aux.getSiguiente();
@@ -124,9 +124,9 @@ public class Lista<T> implements ILista<T> {
         this.primero = unNodo;
     }
 
-    public INodo quitarPrimero2() {
-        INodo aux;
-        INodo x = null;
+    public Nodo quitarPrimero2() {
+        Nodo aux;
+        Nodo x = null;
         aux = getPrimero();
         if (!esVacia()) {
             x = getPrimero();
@@ -135,15 +135,15 @@ public class Lista<T> implements ILista<T> {
         return x;
     }
 
-    public INodo quitarPrimero() {
-        INodo<T> aux = this.getPrimero().clonar();
+    public Nodo quitarPrimero() {
+        Nodo<T> aux = this.getPrimero().clonar();
         setPrimero(getPrimero().getSiguiente());
         return aux;
     }
 
-    public INodo<T> obtenerMayor() {
-        INodo aux = getPrimero();
-        INodo mayor = getPrimero();
+    public Nodo<T> obtenerMayor() {
+        Nodo aux = getPrimero();
+        Nodo mayor = getPrimero();
         while (aux != null) {
             if (mayor.getEtiqueta().compareTo(aux.getEtiqueta()) < 1) {
                 mayor = aux;
@@ -153,9 +153,9 @@ public class Lista<T> implements ILista<T> {
         return mayor;
     }
 
-    public INodo<T> obtenerMenor() {
-        INodo aux = getPrimero();
-        INodo menor = getPrimero();
+    public Nodo<T> obtenerMenor() {
+        Nodo aux = getPrimero();
+        Nodo menor = getPrimero();
         while (aux != null) {
             if (menor.getEtiqueta().compareTo(aux.getEtiqueta()) > 1) {
                 menor = aux;
@@ -166,7 +166,7 @@ public class Lista<T> implements ILista<T> {
     }
 
     public void quitarMenor2() {
-        INodo menor = obtenerMenor();
+        Nodo menor = obtenerMenor();
         eliminar(menor.getEtiqueta());
     }
 
@@ -203,20 +203,20 @@ public class Lista<T> implements ILista<T> {
     }
 
     public void quitarMayor() {
-        INodo mayor = obtenerMayor();
+        Nodo mayor = obtenerMayor();
         eliminar(mayor.getEtiqueta());
     }
 
     public Lista insercionDirecta() {
         Lista<T> nuevaLista = new Lista<T>();
-        INodo<T> aux;
+        Nodo<T> aux;
         aux = getPrimero();
         if (aux == null) {
             return nuevaLista;
         }
         while (aux != null) {
-            INodo<T> x = quitarPrimero();
-            nuevaLista.insertarOrdenado((Nodo<T>) x);
+            Nodo<T> x = quitarPrimero();
+            nuevaLista.insertarOrdenado(x);
             aux = aux.getSiguiente();
         }
         return nuevaLista;
