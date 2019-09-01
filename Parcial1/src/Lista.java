@@ -223,9 +223,9 @@ public class Lista<T> implements ILista<T> {
     }
 
     public Lista<T> seleccionDirecta() {
-        ListaOrdenada<T> nuevaLista;
+        Lista<T> nuevaLista;
 
-        nuevaLista = new ListaOrdenada<>();
+        nuevaLista = new Lista<>();
 
         if (this.esVacia()) {
             return nuevaLista;
