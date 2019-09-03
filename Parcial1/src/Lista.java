@@ -135,7 +135,7 @@ public class Lista<T> implements ILista<T> {
         return x;
     }
 
-    public Nodo quitarPrimero() {
+    public Nodo<T> quitarPrimero() {
         Nodo<T> aux = this.getPrimero().clonar();
         setPrimero(getPrimero().getSiguiente());
         return aux;
@@ -202,12 +202,44 @@ public class Lista<T> implements ILista<T> {
         return menor;
     }
 
-    public void quitarMayor() {
+    public Nodo<T> quitarMayor() {
+        Nodo<T> anterior, actual, mayor, auxMayor;
+
+        if (this.esVacia()) {
+            return null;
+        }
+
+        actual = this.getPrimero();
+        mayor = this.getPrimero();
+        anterior = null;
+        auxMayor = null;
+
+        while (actual != null) {
+            if (actual.compareTo(mayor.getEtiqueta()) > 0) {
+                mayor = actual;
+                auxMayor = anterior;
+            }
+            anterior = actual;
+            actual = actual.getSiguiente();
+        }
+
+        if (auxMayor == null) {
+            this.setPrimero(mayor.getSiguiente());
+        } else {
+            auxMayor.setSiguiente(mayor.getSiguiente());
+        }
+        mayor.setSiguiente(null);
+
+        // Retorno nodo menor
+        return mayor;
+    }
+
+    public void quitarMayor2() {
         Nodo mayor = obtenerMayor();
         eliminar(mayor.getEtiqueta());
     }
 
-    public Lista insercionDirecta() {
+    public Lista<T> insercionDirecta() {
         Lista<T> nuevaLista = new Lista<T>();
         Nodo<T> aux;
         aux = getPrimero();

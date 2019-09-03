@@ -91,7 +91,7 @@ public class Parcial {
         System.out.println("\n*** Alumnos Exigente 102 ***\n");
 
         exigente102.quitarMayor();
-        exigente102.quitarMenor2();
+        exigente102.quitarMenor();
         exigente102.imprimir();
 
         Lista<Alumno> listaTest1 = new Lista();
@@ -130,6 +130,16 @@ public class Parcial {
 
         Lista<Alumno> listaSeleccionDirecta = listaTest2.seleccionDirecta();
         listaSeleccionDirecta.imprimir();
+
+        System.out.println("\n *** Sacar menor y mayor ***\n ");
+
+        // saca el 6
+        listaSeleccionDirecta.quitarMayor();
+        // saca el 1
+        listaInsercionDirecta.quitarMenor();
+
+        listaSeleccionDirecta.imprimir();
+        listaInsercionDirecta.imprimir();
     }
 
 }
